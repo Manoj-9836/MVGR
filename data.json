@@ -1,0 +1,272 @@
+[
+    {
+        "userId": "student-demo",
+        "sleep_hours": 6.5,
+        "screen_time_hours": 5.2,
+        "study_time_hours": 4.5,
+        "steps": 7200,
+        "heart_rate": 78,
+        "stress_score": 2.58
+    },
+    {
+        "userId": "student-demo",
+        "sleep_hours": 7.1,
+        "screen_time_hours": 4.8,
+        "study_time_hours": 5.0,
+        "steps": 8200,
+        "heart_rate": 74,
+        "stress_score": 2.21
+    },
+    {
+        "userId": "student-demo",
+        "sleep_hours": 5.9,
+        "screen_time_hours": 6.1,
+        "study_time_hours": 4.0,
+        "steps": 6500,
+        "heart_rate": 82,
+        "stress_score": 3.12
+    },
+    {
+        "userId": "student-demo",
+        "sleep_hours": 6.8,
+        "screen_time_hours": 5.0,
+        "study_time_hours": 4.7,
+        "steps": 7800,
+        "heart_rate": 76,
+        "stress_score": 2.43
+    },
+    {
+        "userId": "student-demo",
+        "sleep_hours": 7.4,
+        "screen_time_hours": 4.3,
+        "study_time_hours": 5.2,
+        "steps": 9100,
+        "heart_rate": 72,
+        "stress_score": 2.05
+    },
+    {
+        "userId": "student-demo",
+        "sleep_hours": 6.2,
+        "screen_time_hours": 5.9,
+        "study_time_hours": 4.1,
+        "steps": 6900,
+        "heart_rate": 80,
+        "stress_score": 2.94
+    },
+    {
+        "userId": "student-demo",
+        "sleep_hours": 5.6,
+        "screen_time_hours": 6.5,
+        "study_time_hours": 3.8,
+        "steps": 6100,
+        "heart_rate": 85,
+        "stress_score": 3.38
+    },
+    {
+        "userId": "student-demo",
+        "sleep_hours": 7.3,
+        "screen_time_hours": 4.6,
+        "study_time_hours": 5.3,
+        "steps": 8800,
+        "heart_rate": 73,
+        "stress_score": 2.16
+    },
+    {
+        "userId": "student-demo",
+        "sleep_hours": 6.7,
+        "screen_time_hours": 5.4,
+        "study_time_hours": 4.6,
+        "steps": 7600,
+        "heart_rate": 77,
+        "stress_score": 2.51
+    },
+    {
+        "userId": "student-demo",
+        "sleep_hours": 7.0,
+        "screen_time_hours": 4.9,
+        "study_time_hours": 5.0,
+        "steps": 8400,
+        "heart_rate": 75,
+        "stress_score": 2.29
+    },
+    {
+        "userId": "student-demo",
+        "sleep_hours": 6.1,
+        "screen_time_hours": 5.8,
+        "study_time_hours": 4.2,
+        "steps": 7000,
+        "heart_rate": 79,
+        "stress_score": 2.88
+    },
+    {
+        "userId": "student-demo",
+        "sleep_hours": 7.5,
+        "screen_time_hours": 4.2,
+        "study_time_hours": 5.4,
+        "steps": 9200,
+        "heart_rate": 71,
+        "stress_score": 2.01
+    },
+    {
+        "userId": "student-demo",
+        "sleep_hours": 5.8,
+        "screen_time_hours": 6.3,
+        "study_time_hours": 3.9,
+        "steps": 6400,
+        "heart_rate": 83,
+        "stress_score": 3.21
+    },
+    {
+        "userId": "student-demo",
+        "sleep_hours": 6.9,
+        "screen_time_hours": 5.1,
+        "study_time_hours": 4.8,
+        "steps": 8000,
+        "heart_rate": 76,
+        "stress_score": 2.44
+    },
+    {
+        "userId": "student-demo",
+        "sleep_hours": 7.2,
+        "screen_time_hours": 4.5,
+        "study_time_hours": 5.2,
+        "steps": 8700,
+        "heart_rate": 74,
+        "stress_score": 2.17
+    },
+    {
+        "userId": "student-demo",
+        "sleep_hours": 6.4,
+        "screen_time_hours": 5.6,
+        "study_time_hours": 4.4,
+        "steps": 7300,
+        "heart_rate": 78,
+        "stress_score": 2.67
+    },
+    {
+        "userId": "student-demo",
+        "sleep_hours": 5.7,
+        "screen_time_hours": 6.4,
+        "study_time_hours": 3.7,
+        "steps": 6200,
+        "heart_rate": 84,
+        "stress_score": 3.33
+    },
+    {
+        "userId": "student-demo",
+        "sleep_hours": 7.6,
+        "screen_time_hours": 4.1,
+        "study_time_hours": 5.6,
+        "steps": 9400,
+        "heart_rate": 70,
+        "stress_score": 1.98
+    },
+    {
+        "userId": "student-demo",
+        "sleep_hours": 6.6,
+        "screen_time_hours": 5.3,
+        "study_time_hours": 4.7,
+        "steps": 7700,
+        "heart_rate": 77,
+        "stress_score": 2.49
+    },
+    {
+        "userId": "student-demo",
+        "sleep_hours": 7.0,
+        "screen_time_hours": 4.7,
+        "study_time_hours": 5.1,
+        "steps": 8600,
+        "heart_rate": 74,
+        "stress_score": 2.24
+    },
+    {
+        "userId": "student-demo",
+        "sleep_hours": 6.3,
+        "screen_time_hours": 5.7,
+        "study_time_hours": 4.3,
+        "steps": 7100,
+        "heart_rate": 79,
+        "stress_score": 2.79
+    },
+    {
+        "userId": "student-demo",
+        "sleep_hours": 7.4,
+        "screen_time_hours": 4.4,
+        "study_time_hours": 5.5,
+        "steps": 9000,
+        "heart_rate": 72,
+        "stress_score": 2.08
+    },
+    {
+        "userId": "student-demo",
+        "sleep_hours": 5.5,
+        "screen_time_hours": 6.7,
+        "study_time_hours": 3.6,
+        "steps": 6000,
+        "heart_rate": 86,
+        "stress_score": 3.41
+    },
+    {
+        "userId": "student-demo",
+        "sleep_hours": 6.9,
+        "screen_time_hours": 5.2,
+        "study_time_hours": 4.9,
+        "steps": 8100,
+        "heart_rate": 76,
+        "stress_score": 2.47
+    },
+    {
+        "userId": "student-demo",
+        "sleep_hours": 7.1,
+        "screen_time_hours": 4.8,
+        "study_time_hours": 5.3,
+        "steps": 8800,
+        "heart_rate": 73,
+        "stress_score": 2.19
+    },
+    {
+        "userId": "student-demo",
+        "sleep_hours": 6.5,
+        "screen_time_hours": 5.4,
+        "study_time_hours": 4.5,
+        "steps": 7200,
+        "heart_rate": 78,
+        "stress_score": 2.58
+    },
+    {
+        "userId": "student-demo",
+        "sleep_hours": 5.8,
+        "screen_time_hours": 6.2,
+        "study_time_hours": 3.9,
+        "steps": 6400,
+        "heart_rate": 82,
+        "stress_score": 3.17
+    },
+    {
+        "userId": "student-demo",
+        "sleep_hours": 7.3,
+        "screen_time_hours": 4.6,
+        "study_time_hours": 5.4,
+        "steps": 9100,
+        "heart_rate": 72,
+        "stress_score": 2.11
+    },
+    {
+        "userId": "student-demo",
+        "sleep_hours": 6.7,
+        "screen_time_hours": 5.1,
+        "study_time_hours": 4.8,
+        "steps": 7800,
+        "heart_rate": 76,
+        "stress_score": 2.45
+    },
+    {
+        "userId": "student-demo",
+        "sleep_hours": 7.2,
+        "screen_time_hours": 4.5,
+        "study_time_hours": 5.2,
+        "steps": 8700,
+        "heart_rate": 74,
+        "stress_score": 2.18
+    }
+]

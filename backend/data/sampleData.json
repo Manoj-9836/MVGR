@@ -1,0 +1,51 @@
+[
+  {
+    "sleep_hours": 7.1,
+    "screen_time_hours": 4.5,
+    "study_time_hours": 5,
+    "steps": 8300,
+    "heart_rate": 74
+  },
+  {
+    "sleep_hours": 5.8,
+    "screen_time_hours": 8.1,
+    "study_time_hours": 3.7,
+    "steps": 5200,
+    "heart_rate": 88
+  },
+  {
+    "sleep_hours": 6.4,
+    "screen_time_hours": 6.2,
+    "study_time_hours": 4.9,
+    "steps": 9100,
+    "heart_rate": 80
+  },
+  {
+    "sleep_hours": 7.6,
+    "screen_time_hours": 3.9,
+    "study_time_hours": 6.2,
+    "steps": 10200,
+    "heart_rate": 70
+  },
+  {
+    "sleep_hours": 4.9,
+    "screen_time_hours": 9.3,
+    "study_time_hours": 2.8,
+    "steps": 4100,
+    "heart_rate": 92
+  },
+  {
+    "sleep_hours": 6.9,
+    "screen_time_hours": 5.1,
+    "study_time_hours": 5.6,
+    "steps": 8600,
+    "heart_rate": 76
+  },
+  {
+    "sleep_hours": 7.8,
+    "screen_time_hours": 4,
+    "study_time_hours": 5.8,
+    "steps": 9800,
+    "heart_rate": 72
+  }
+]

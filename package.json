@@ -1,0 +1,17 @@
+{
+  "name": "habitlens-student-wellness",
+  "version": "1.0.0",
+  "private": true,
+  "description": "HabitLens - Student Wellness Pattern Analyzer prototype",
+  "scripts": {
+    "setup": "npm run setup:backend && npm run setup:frontend",
+    "setup:backend": "npm install --prefix backend",
+    "setup:frontend": "npm install --prefix frontend",
+    "start": "concurrently \"npm run start --prefix backend\" \"npm run start --prefix frontend\"",
+    "start:all": "concurrently \"npm run start --prefix backend\" \"npm run start --prefix frontend\" \"python analysis/stress_model.py\"",
+    "start:analysis": "python analysis/stress_model.py"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  }
+}
