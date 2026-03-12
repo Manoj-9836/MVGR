@@ -1,4 +1,5 @@
 import React from "react";
+import { InfoCard } from "./VisualComponents";
 
 function ConfidenceBadge({ score }) {
   if (score == null) return null;
@@ -14,6 +15,7 @@ function InsightsCard({ insights, advisorResponse, causalAnalysis, t }) {
   const plp = causalAnalysis?.primary_leverage_point;
   const recs = causalAnalysis?.recommendations ?? [];
   const hasCausal = plp != null || recs.length > 0;
+  const starterAction = plp?.action || recs[0]?.action;
 
   return (
     <div className="card insights-card">
@@ -22,6 +24,15 @@ function InsightsCard({ insights, advisorResponse, causalAnalysis, t }) {
         <h3>{t("insights.actionableTitle")}</h3>
         <p className="insights-intro">{t("insights.intro")}</p>
       </div>
+
+      {starterAction && (
+        <InfoCard
+          icon="bi bi-sign-turn-right-fill"
+          title={t("insights.startHere")}
+          content={starterAction}
+          color="#a9b0ff"
+        />
+      )}
 
       <div className="insights-body-grid">
         {plp && (

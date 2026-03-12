@@ -1,10 +1,14 @@
 import React, { useMemo } from "react";
+import { VisualTooltip } from "./VisualComponents";
+import { healthIndicators } from "../utils/visualHints";
 
 function WellnessHabitsSnapshot({ records, t }) {
   const habitConfig = useMemo(
     () => [
       {
         key: "sleep_hours",
+        icon: healthIndicators.sleep.icon,
+        helperText: "7 to 9 hours is the healthy range.",
         label: t("metric.sleep"),
         unit: t("unit.hrs"),
         targetLabel: t("target.sleep"),
@@ -22,6 +26,8 @@ function WellnessHabitsSnapshot({ records, t }) {
       },
       {
         key: "screen_time_hours",
+        icon: healthIndicators.screenTime.icon,
+        helperText: "Less screen time usually helps focus and sleep.",
         label: t("metric.screenTime"),
         unit: t("unit.hrs"),
         targetLabel: t("target.screenTime"),
@@ -39,6 +45,8 @@ function WellnessHabitsSnapshot({ records, t }) {
       },
       {
         key: "steps",
+        icon: healthIndicators.steps.icon,
+        helperText: "More daily movement usually means a stronger routine.",
         label: t("metric.dailySteps"),
         unit: t("unit.steps"),
         targetLabel: t("target.steps"),
@@ -86,7 +94,7 @@ function WellnessHabitsSnapshot({ records, t }) {
   const circleOrder = ["sleep_hours", "screen_time_hours", "steps"];
 
   return (
-    <section className="card chart-card habits-snapshot-card">
+    <section className="card chart-card habits-snapshot-card snapshot-container">
       <div className="snapshot-header">
         <h3>{t("snapshot.title")}</h3>
         <p>{t("snapshot.description")}</p>
@@ -101,6 +109,7 @@ function WellnessHabitsSnapshot({ records, t }) {
 
           return (
             <div key={key} className={`snapshot-bubble snapshot-bubble-${key}`}>
+              <p className="snapshot-bubble-icon" aria-hidden="true"><i className={metric.icon} /></p>
               <p className="snapshot-bubble-value">{metric.formatter(metric.average)}</p>
               <p className="snapshot-bubble-unit">{metric.unit}</p>
               <p className="snapshot-bubble-label">{metric.label}</p>
@@ -117,11 +126,21 @@ function WellnessHabitsSnapshot({ records, t }) {
           }
 
           return (
-            <div key={`${key}-status`} className="snapshot-status-item">
-              <p className="snapshot-label">{metric.label}</p>
-              <p className="snapshot-target">{metric.targetLabel}</p>
-              <span className="snapshot-status">{metric.status}</span>
-            </div>
+            <VisualTooltip
+              key={`${key}-status`}
+              icon={metric.icon}
+              label={metric.label}
+              message={metric.helperText}
+            >
+              <div className={`snapshot-status-item snapshot-status-item-${key}`}>
+                <p className="snapshot-label">
+                  <span className="snapshot-label-icon" aria-hidden="true"><i className={metric.icon} /></span>
+                  {metric.label}
+                </p>
+                <p className="snapshot-target">{metric.targetLabel}</p>
+                <span className="snapshot-status">{metric.status}</span>
+              </div>
+            </VisualTooltip>
           );
         })}
       </div>
