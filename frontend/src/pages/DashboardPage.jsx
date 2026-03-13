@@ -228,6 +228,49 @@ function DashboardPage() {
     return null;
   }, [analysis, records]);
 
+  const modelSummary = useMemo(() => {
+    const ml = analysis?.ml_prediction;
+    const causal = analysis?.causal_analysis;
+
+    const humanizeAlgorithm = (name) => {
+      if (name === "conditional_granger_var") {
+        return "Granger Causality";
+      }
+      if (name === "dynotears_linear") {
+        return "Score-Based Structure Learning (DYNOTEARS)";
+      }
+      return typeof name === "string" ? name : "";
+    };
+
+    const grangerName = humanizeAlgorithm(causal?.granger?.method);
+    const scoreBasedName = humanizeAlgorithm(causal?.score_based_structure_learning?.algorithm);
+
+    let algorithmText = "";
+    if (grangerName && scoreBasedName) {
+      algorithmText = `${grangerName} + ${scoreBasedName}`;
+    } else {
+      algorithmText = grangerName || scoreBasedName || (ml?.algorithm || "");
+    }
+
+    if (!ml || typeof ml !== "object") {
+      return { accuracyText: "-", algorithmText };
+    }
+
+    const parsedAccuracy = Number(ml.accuracy);
+    const normalizedAccuracy = Number.isFinite(parsedAccuracy)
+      ? parsedAccuracy > 1 && parsedAccuracy <= 100
+        ? parsedAccuracy / 100
+        : parsedAccuracy
+      : null;
+
+    const accuracyText =
+      normalizedAccuracy != null && normalizedAccuracy >= 0 && normalizedAccuracy <= 1
+        ? `${(normalizedAccuracy * 100).toFixed(1)}%`
+        : "-";
+
+    return { accuracyText, algorithmText };
+  }, [analysis]);
+
   return (
     <div className="app-frame">
       <aside className="side-nav">
@@ -322,6 +365,12 @@ function DashboardPage() {
                 label={t("stat.productivityScore")}
                 value={latest ? latest.productivity_score.toFixed(2) : "-"}
                 helper={t("stat.productivityHelper")}
+              />
+              <StatCard
+                label={t("stat.algorithmAccuracy")}
+                value={modelSummary.accuracyText}
+                subvalue={modelSummary.algorithmText ? `(${modelSummary.algorithmText})` : ""}
+                helper={t("stat.algorithmAccuracyHelper")}
               />
             </div>
           </section>

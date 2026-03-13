@@ -5,6 +5,8 @@ import numpy as np
 from scipy.linalg import expm
 from scipy.optimize import minimize
 from sklearn.ensemble import RandomForestClassifier
+from sklearn.metrics import accuracy_score
+from sklearn.model_selection import train_test_split
 from statsmodels.stats.multitest import multipletests
 from statsmodels.tools.sm_exceptions import EstimationWarning
 from statsmodels.tsa.api import VAR
@@ -130,17 +132,34 @@ def generate_training_data(rows: int = 800) -> pd.DataFrame:
     return data
 
 
-def train_model() -> RandomForestClassifier:
+def train_model() -> tuple[RandomForestClassifier, dict]:
     train_df = generate_training_data()
-    x_train = train_df[PREDICTION_FEATURE_COLUMNS]
-    y_train = train_df["stress_level"]
+    x = train_df[PREDICTION_FEATURE_COLUMNS]
+    y = train_df["stress_level"]
+
+    x_train, x_test, y_train, y_test = train_test_split(
+        x,
+        y,
+        test_size=0.2,
+        random_state=42,
+        stratify=y,
+    )
 
     model = RandomForestClassifier(n_estimators=180, random_state=42)
     model.fit(x_train, y_train)
-    return model
+
+    test_predictions = model.predict(x_test)
+    metrics = {
+        "algorithm": model.__class__.__name__,
+        "accuracy": float(accuracy_score(y_test, test_predictions)),
+        "train_samples": int(len(x_train)),
+        "test_samples": int(len(x_test)),
+    }
+
+    return model, metrics
 
 
-model = train_model()
+model, model_metrics = train_model()
 
 
 def infer_causal_columns(df: pd.DataFrame, requested_columns: list[str] | None) -> list[str]:
@@ -712,6 +731,10 @@ def predict_stress() -> tuple:
             {
                 "predicted_stress_level": prediction,
                 "confidence": round(confidence, 3),
+                "algorithm": model_metrics["algorithm"],
+                "accuracy": round(model_metrics["accuracy"], 3),
+                "train_samples": model_metrics["train_samples"],
+                "test_samples": model_metrics["test_samples"],
             }
         ),
         200,

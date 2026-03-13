@@ -515,7 +515,7 @@ body {
 
 .top-cards {
   display: grid;
-  grid-template-columns: repeat(2, minmax(220px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 12px;
 }
 
@@ -608,6 +608,146 @@ body {
   font-family: "Space Grotesk", sans-serif;
 }
 
+.temporal-causation-card {
+  display: grid;
+  gap: 10px;
+  border: 1px solid #d6dcec;
+  background: linear-gradient(180deg, #ffffff 0%, #f8f9ff 100%);
+}
+
+.temporal-summary {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.temporal-pill {
+  border: 1px solid #e1e5f2;
+  background: #f8f9fe;
+  border-radius: 12px;
+  padding: 8px 10px;
+  display: grid;
+  gap: 2px;
+}
+
+.temporal-pill span {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: #6b7590;
+  font-weight: 700;
+}
+
+.temporal-pill strong {
+  color: #172033;
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 0.98rem;
+}
+
+.temporal-canvas-wrap {
+  min-height: 230px;
+}
+
+.sleep-analysis-card {
+  background: linear-gradient(145deg, #11161f 0%, #1a2231 100%);
+  border: 1px solid #2b354a;
+  color: #f8fbff;
+  display: grid;
+  gap: 12px;
+}
+
+.sleep-analysis-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+
+.sleep-analysis-header h3 {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.84);
+  font-size: 0.78rem;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+}
+
+.sleep-analysis-tag {
+  font-size: 0.68rem;
+  color: rgba(255, 255, 255, 0.6);
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 999px;
+  padding: 4px 9px;
+}
+
+.sleep-analysis-metrics {
+  display: flex;
+  gap: 16px;
+}
+
+.sleep-analysis-metrics > div {
+  display: grid;
+  gap: 2px;
+}
+
+.sleep-analysis-metrics p {
+  margin: 0;
+  font-size: 0.66rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.45);
+}
+
+.sleep-analysis-metrics strong {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 1.18rem;
+  line-height: 1;
+  color: #ffffff;
+}
+
+.sleep-analysis-metrics strong span {
+  margin-left: 3px;
+  font-size: 0.68rem;
+  opacity: 0.56;
+}
+
+.sleep-analysis-bars {
+  height: 86px;
+  display: flex;
+  align-items: flex-end;
+  gap: 4px;
+}
+
+.sleep-analysis-col {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+}
+
+.sleep-analysis-bar {
+  width: 100%;
+  border-radius: 3px;
+  min-height: 5px;
+  background: rgba(255, 255, 255, 0.14);
+}
+
+.sleep-analysis-bar.highlight {
+  background: #c8f135;
+}
+
+.sleep-analysis-col span {
+  font-size: 0.58rem;
+  color: rgba(255, 255, 255, 0.42);
+}
+
+.sleep-analysis-footnote {
+  margin: 0;
+  font-size: 0.72rem;
+  color: rgba(255, 255, 255, 0.62);
+  line-height: 1.45;
+}
+
 .productivity-trend-card {
   min-height: 320px;
 }
@@ -636,8 +776,8 @@ body {
 
 .snapshot-bubble-stage {
   position: relative;
-  height: 250px;
-  width: min(100%, 340px);
+  height: 292px;
+  width: min(100%, 392px);
   margin: 0 auto 12px;
   border-radius: 18px;
   background:
@@ -663,30 +803,30 @@ body {
 }
 
 .snapshot-bubble-sleep_hours {
-  width: 142px;
-  height: 142px;
-  left: calc(50% - 150px);
-  top: 34px;
+  width: 166px;
+  height: 166px;
+  left: calc(50% - 174px);
+  top: 30px;
   background: #c4b5fd;
   color: #1e1b4b;
   z-index: 1;
 }
 
 .snapshot-bubble-screen_time_hours {
-  width: 132px;
-  height: 132px;
-  left: calc(50% - 14px);
-  top: 50px;
+  width: 156px;
+  height: 156px;
+  left: calc(50% - 16px);
+  top: 48px;
   background: #1c1c1e;
   color: #f3f5fb;
   z-index: 3;
 }
 
 .snapshot-bubble-steps {
-  width: 98px;
-  height: 98px;
-  left: calc(50% - 92px);
-  top: 140px;
+  width: 118px;
+  height: 118px;
+  left: calc(50% - 122px);
+  top: 168px;
   background: #cbe56b;
   color: #1a2000;
   z-index: 2;
@@ -696,7 +836,7 @@ body {
   margin: 0;
   font-family: "Space Grotesk", sans-serif;
   font-weight: 700;
-  font-size: 1.62rem;
+  font-size: 1.86rem;
   line-height: 1;
 }
 
@@ -712,28 +852,28 @@ body {
 }
 
 .snapshot-bubble-screen_time_hours .snapshot-bubble-value {
-  font-size: 1.42rem;
+  font-size: 1.68rem;
 }
 
 .snapshot-bubble-screen_time_hours .snapshot-bubble-label {
-  font-size: 0.72rem;
+  font-size: 0.8rem;
   line-height: 1.15;
 }
 
 .snapshot-bubble-steps .snapshot-bubble-value {
-  font-size: 1.24rem;
+  font-size: 1.44rem;
 }
 
 .snapshot-bubble-unit {
   margin: 5px 0 0;
-  font-size: 0.78rem;
+  font-size: 0.86rem;
   opacity: 0.85;
   font-weight: 600;
 }
 
 .snapshot-bubble-label {
   margin: 5px 0 0;
-  font-size: 0.78rem;
+  font-size: 0.84rem;
   font-weight: 700;
   letter-spacing: 0.02em;
 }
@@ -1248,6 +1388,14 @@ body {
 
   .full-width {
     grid-column: auto;
+  }
+
+  .temporal-summary {
+    grid-template-columns: 1fr;
+  }
+
+  .sleep-analysis-metrics {
+    justify-content: space-between;
   }
 
   .guided-testing-grid {
