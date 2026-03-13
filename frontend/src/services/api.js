@@ -1,7 +1,22 @@
 import axios from "axios";
 
-const API_BASE_URL =
-  import.meta.env.VITE_API_BASE_URL || "http://localhost:5000/api";
+const LOCAL_DEFAULT_API = "http://localhost:5000/api";
+
+function resolveApiBaseUrl() {
+  const configured = (import.meta.env.VITE_API_BASE_URL || "").trim();
+  if (!configured) {
+    return LOCAL_DEFAULT_API;
+  }
+
+  const noTrailingSlash = configured.replace(/\/+$/, "");
+  if (noTrailingSlash.toLowerCase().endsWith("/api")) {
+    return noTrailingSlash;
+  }
+
+  return `${noTrailingSlash}/api`;
+}
+
+const API_BASE_URL = resolveApiBaseUrl();
 
 export const api = axios.create({
   baseURL: API_BASE_URL
