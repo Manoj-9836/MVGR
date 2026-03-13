@@ -1,5 +1,6 @@
 from flask import Flask, request, jsonify
 from flask_cors import CORS
+import os
 import pandas as pd
 import numpy as np
 from scipy.linalg import expm
@@ -14,6 +15,11 @@ import warnings
 
 app = Flask(__name__)
 CORS(app)
+
+
+@app.get("/health")
+def health_check():
+    return jsonify({"status": "ok", "service": "habitlens-analysis"})
 
 PREDICTION_FEATURE_COLUMNS = [
     "sleep_hours",
@@ -780,4 +786,5 @@ def causal_analysis() -> tuple:
 
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=5001, debug=False, use_reloader=False)
+    port = int(os.environ.get("PORT", 5001))
+    app.run(host="0.0.0.0", port=port, debug=False, use_reloader=False)
